@@ -43,6 +43,8 @@
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Interfaces\Repositorio\Base\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Repositorio\ICategoriaRepository.cs" />
+    <Compile Include="Interfaces\Repositorio\IProdutoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
