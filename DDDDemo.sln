@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.MVC", "DDDDemo.MVC\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.Dominio", "DDDDemo.Dominio\DDDDemo.Dominio.csproj", "{E675B0D0-9862-40CA-9122-44BED7A2B7D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.Infraestrutura.Dados", "DDDDemo.Infraestrutura.Dados\DDDDemo.Infraestrutura.Dados.csproj", "{514AF96D-908B-49AE-89E0-332EAE3CB5AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.Infraestrutura.Dados.Context", "DDDDemo.Infraestrutura.Dados\DDDDemo.Infraestrutura.Dados.Context.csproj", "{514AF96D-908B-49AE-89E0-332EAE3CB5AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
