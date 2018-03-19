@@ -6,6 +6,7 @@
         public string Nome { get; set; }
         public decimal Valor { get; set; }
         public bool Situacao { get; set; }
+        public int CategoriaId { get; set; }
 
         public virtual Categoria Categoria { get; set; }
     }

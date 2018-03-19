@@ -47,11 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapping\CategoriaMap.cs" />
+    <Compile Include="Mapping\ProdutoMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DDDDemo.Dominio\DDDDemo.Dominio.csproj">
+      <Project>{e675b0d0-9862-40ca-9122-44bed7a2b7d1}</Project>
+      <Name>DDDDemo.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
