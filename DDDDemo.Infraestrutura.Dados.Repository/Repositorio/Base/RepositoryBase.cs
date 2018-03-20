@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DDDDemo.Infraestrutura.Dados.Repository.Repositorio.Base
 {
-    public class RepositorioBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
     {
         protected DDDDemoContext Db = new DDDDemoContext();
 

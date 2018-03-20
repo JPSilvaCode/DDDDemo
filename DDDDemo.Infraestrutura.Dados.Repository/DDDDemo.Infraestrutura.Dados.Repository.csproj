@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorio\Base\RepositorioBase.cs" />
+    <Compile Include="Repositorio\Base\RepositoryBase.cs" />
+    <Compile Include="Repositorio\CategoriaRepository.cs" />
+    <Compile Include="Repositorio\ProdutoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DDDDemo.Dominio\DDDDemo.Dominio.csproj">
