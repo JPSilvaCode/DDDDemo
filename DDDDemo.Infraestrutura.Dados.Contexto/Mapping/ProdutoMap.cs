@@ -21,7 +21,7 @@ namespace DDDDemo.Infraestrutura.Dados.Contexto.Mapping
                 .IsRequired();
 
             Property(p => p.Valor)
-                .HasPrecision(5, 2)
+                .HasPrecision(18, 2)
                 .IsRequired();
 
             Property(p => p.Situacao)                
