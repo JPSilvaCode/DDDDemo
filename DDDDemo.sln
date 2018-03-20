@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.Infraestrutura.Dado
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.Infraestrutura.Dados.Repository", "DDDDemo.Infraestrutura.Dados.Repository\DDDDemo.Infraestrutura.Dados.Repository.csproj", "{03291133-B09A-4E38-8E19-4B41760AC92A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDDemo.Aplicacao", "DDDDemo.Aplicacao\DDDDemo.Aplicacao.csproj", "{D2701BB7-ECEF-43DF-8317-5D2563BD19BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{03291133-B09A-4E38-8E19-4B41760AC92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03291133-B09A-4E38-8E19-4B41760AC92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03291133-B09A-4E38-8E19-4B41760AC92A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2701BB7-ECEF-43DF-8317-5D2563BD19BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2701BB7-ECEF-43DF-8317-5D2563BD19BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2701BB7-ECEF-43DF-8317-5D2563BD19BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2701BB7-ECEF-43DF-8317-5D2563BD19BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{E675B0D0-9862-40CA-9122-44BED7A2B7D1} = {4A0DA900-6C24-4D8D-AD54-85657B96BCA8}
 		{90741185-B36F-4462-A828-3ED513D9F98E} = {5D99897F-EEC5-41E6-8BB9-DD2F065DC76A}
 		{03291133-B09A-4E38-8E19-4B41760AC92A} = {5D99897F-EEC5-41E6-8BB9-DD2F065DC76A}
+		{D2701BB7-ECEF-43DF-8317-5D2563BD19BE} = {82ECAFEA-5260-4D16-B93D-4A097073C9D3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E3E1992-63B9-4C54-9065-E4CCD9BF9A69}
