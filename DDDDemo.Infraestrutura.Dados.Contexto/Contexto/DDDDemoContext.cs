@@ -18,6 +18,9 @@ namespace DDDDemo.Infraestrutura.Dados.Contexto.Contexto
 
         }
 
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -28,9 +31,6 @@ namespace DDDDemo.Infraestrutura.Dados.Contexto.Contexto
             modelBuilder.Configurations.Add(new ProdutoMap());
 
             base.OnModelCreating(modelBuilder);
-        }
-
-        public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Produto> Produtos { get; set; }
+        }      
     }
 }
