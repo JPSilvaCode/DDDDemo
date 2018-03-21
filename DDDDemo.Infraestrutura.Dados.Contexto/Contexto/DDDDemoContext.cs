@@ -1,12 +1,7 @@
 ﻿using DDDDemo.Dominio.Entidades;
 using DDDDemo.Infraestrutura.Dados.Contexto.Mapping;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DDDDemo.Infraestrutura.Dados.Contexto.Contexto
 {
