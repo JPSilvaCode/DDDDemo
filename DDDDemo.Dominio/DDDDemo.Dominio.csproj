@@ -49,6 +49,7 @@
     <Compile Include="Interfaces\Servico\ICategoriaService.cs" />
     <Compile Include="Interfaces\Servico\IProdutoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\Base\ServiceBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
