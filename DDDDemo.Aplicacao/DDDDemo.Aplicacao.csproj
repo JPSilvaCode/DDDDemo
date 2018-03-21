@@ -41,9 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\AppServiceBase.cs" />
+    <Compile Include="CategoriaAppService.cs" />
     <Compile Include="Interfaces\Base\IAppServiceBase.cs" />
     <Compile Include="Interfaces\ICategoriaAppService.cs" />
     <Compile Include="Interfaces\IProdutoAppService.cs" />
+    <Compile Include="ProdutoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
