@@ -41,7 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\Base\IAppServiceBase.cs" />
+    <Compile Include="Interfaces\ICategoriaAppService.cs" />
+    <Compile Include="Interfaces\IProdutoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDDDemo.Dominio\DDDDemo.Dominio.csproj">
+      <Project>{E675B0D0-9862-40CA-9122-44BED7A2B7D1}</Project>
+      <Name>DDDDemo.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
