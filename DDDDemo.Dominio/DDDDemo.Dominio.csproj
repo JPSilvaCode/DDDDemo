@@ -50,6 +50,8 @@
     <Compile Include="Interfaces\Servico\IProdutoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicos\Base\ServiceBase.cs" />
+    <Compile Include="Servicos\CategoriaService.cs" />
+    <Compile Include="Servicos\ProdutoService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
