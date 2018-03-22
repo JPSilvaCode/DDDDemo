@@ -1,38 +1,44 @@
 ﻿@model IEnumerable<DDDDemo.Dominio.Entidades.Categoria>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Categoria";
 }
 
-<h2>Index</h2>
+<h2>Cadastro de Categorias</h2>
 
 <p>
-    @Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-outline-primary btn-lg" })
 </p>
-<table class="table">
+<table class="table table-sm table-hover">
 
-    <thead class="">
+    <thead class="thead-dark">
         <tr>
-            <th>
+            <th scope="col">
+                @Html.DisplayName("ID")
+            </th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
-            <th></th>
+            <th scope="col"></th>
         </tr>
     </thead>
 
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.CategoriaId }, new { @class = "btn btn-warning btn-sm" }) |
-                    @Html.ActionLink("Detalhes", "Details", new { id = item.CategoriaId }, new { @class = "btn btn-default btn-sm" }) |
-                    @Html.ActionLink("Excluir", "Delete", new { id = item.CategoriaId }, new { @class = "btn btn-danger btn-sm" })
-                </td>
-            </tr>
+        <tr>
+            <th scope="row">
+                @Html.DisplayFor(modelItem => item.CategoriaId)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.CategoriaId }, new { @class = "btn btn-outline-warning btn-sm" }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.CategoriaId }, new { @class = "btn btn-outline-info btn-sm" }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.CategoriaId }, new { @class = "btn btn-outline-danger btn-sm" })
+            </td>
+        </tr>
         }
     </tbody>
 
