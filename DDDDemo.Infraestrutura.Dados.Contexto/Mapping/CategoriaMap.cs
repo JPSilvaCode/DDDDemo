@@ -14,6 +14,8 @@ namespace DDDDemo.Infraestrutura.Dados.Contexto.Mapping
             Property(p => p.Nome)
                 .HasMaxLength(120)
                 .IsRequired();
+
+            Ignore(t => t.ValidationResult);
         }
     }
 }
