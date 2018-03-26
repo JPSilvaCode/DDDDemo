@@ -1,5 +1,4 @@
-﻿alert('passou');
-(function ($) {
+﻿(function ($) {
     var defaultOptions = {
         validClass: 'is-valid',
         errorClass: 'is-invalid',

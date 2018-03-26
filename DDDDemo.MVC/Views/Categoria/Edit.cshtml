@@ -1,4 +1,4 @@
-﻿@model DDDDemo.Dominio.Entidades.Categoria
+﻿@model DDDDemo.MVC.ViewModel.CategoriaViewModel
 
 @{
     ViewBag.Title = "Edit";
@@ -9,8 +9,10 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
+
         <h4>Editar Categoria</h4>
         <hr />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.CategoriaId)
 
@@ -22,16 +24,12 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col col-md-1">
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Salvar" class="btn btn-outline-success" />
-                    </div>
-                </div>
+        <div class="row col-md-10">
+            <div class="col col-md-2">
+                <input type="submit" value="Salvar" class="btn btn-outline-success btn-block" />
             </div>
-            <div class="col col-md-1">
-                @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-outline-secondary" })
+            <div class="col col-md-2">
+                @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-outline-secondary btn-block" })
             </div>
         </div>
 

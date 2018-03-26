@@ -1,10 +1,8 @@
-﻿using DDDDemo.Aplicacao.Interfaces;
+﻿using AutoMapper;
+using DDDDemo.Aplicacao.Interfaces;
 using DDDDemo.Dominio.Entidades;
 using DDDDemo.MVC.ViewModel;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DDDDemo.MVC.Controllers
@@ -21,16 +19,17 @@ namespace DDDDemo.MVC.Controllers
         // GET: Categoria
         public ActionResult Index()
         {
-            var categorias = _categoriaAppService.GetAll();
-            return View(categorias);
+            var categoriaViewModel = Mapper.Map<IEnumerable<Categoria>, IEnumerable<CategoriaViewModel>>(_categoriaAppService.GetAll());
+
+            return View(categoriaViewModel);
         }
 
         // GET: Categoria/Details/5
         public ActionResult Details(int id)
         {
-            var categoria = _categoriaAppService.GetById(id);
+            var categoriaViewModel = Mapper.Map<Categoria, CategoriaViewModel>(_categoriaAppService.GetById(id));
 
-            return View(categoria);
+            return View(categoriaViewModel);
         }
 
         // GET: Categoria/Create
@@ -42,13 +41,13 @@ namespace DDDDemo.MVC.Controllers
         // POST: Categoria/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CategoriaViewModel categoria)
+        public ActionResult Create(CategoriaViewModel categoriaViewModel)
         {
             if (ModelState.IsValid)
             {
-                Categoria categorias = null;
+                var categoria = Mapper.Map<CategoriaViewModel, Categoria>(categoriaViewModel);
 
-                var validationResult = _categoriaAppService.Add(categorias);
+                var validationResult = _categoriaAppService.Add(categoria);
 
                 if (validationResult.IsValid)
                     return RedirectToAction("Index");
@@ -57,24 +56,26 @@ namespace DDDDemo.MVC.Controllers
                     ModelState.AddModelError("Nome", error.Message);
             }
 
-            return View(categoria);
+            return View(categoriaViewModel);
         }
 
         // GET: Categoria/Edit/5
         public ActionResult Edit(int id)
         {
-            var categoria = _categoriaAppService.GetById(id);
+            var categoriaViewModel = Mapper.Map<Categoria, CategoriaViewModel>(_categoriaAppService.GetById(id));
 
-            return View(categoria);
+            return View(categoriaViewModel);
         }
 
         // POST: Categoria/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Categoria categoria)
+        public ActionResult Edit(CategoriaViewModel categoriaViewModel)
         {
             if (ModelState.IsValid)
             {
+                var categoria = Mapper.Map<CategoriaViewModel, Categoria>(categoriaViewModel);
+
                 var validationResult = _categoriaAppService.Update(categoria);
 
                 if (validationResult.IsValid)
@@ -84,15 +85,15 @@ namespace DDDDemo.MVC.Controllers
                     ModelState.AddModelError("", error.Message);
             }
 
-            return View(categoria);
+            return View(categoriaViewModel);
         }
 
         // GET: Clientes/Delete/5
         public ActionResult Delete(int id)
         {
-            var categoria = _categoriaAppService.GetById(id);
+            var categoriaViewModel = Mapper.Map<Categoria, CategoriaViewModel>(_categoriaAppService.GetById(id));
 
-            return View(categoria);
+            return View(categoriaViewModel);
         }
 
         // POST: Clientes/Delete/5
