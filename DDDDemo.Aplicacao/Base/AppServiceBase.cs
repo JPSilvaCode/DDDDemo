@@ -1,5 +1,6 @@
 ﻿using DDDDemo.Aplicacao.Interfaces.Base;
 using DDDDemo.Dominio.Interfaces.Servico.Base;
+using DomainValidation.Validation;
 using System;
 using System.Collections.Generic;
 
@@ -8,15 +9,18 @@ namespace DDDDemo.Aplicacao.Base
     public class AppServiceBase<TEntity> : IDisposable, IAppServiceBase<TEntity> where TEntity : class
     {
         private readonly IServiceBase<TEntity> _serviceBase;
+        protected ValidationResult ValidationResult { get; private set; }
 
         public AppServiceBase(IServiceBase<TEntity> serviceBase)
         {
             _serviceBase = serviceBase;
+            ValidationResult = new ValidationResult();
         }
 
-        public void Add(TEntity obj)
+        public ValidationResult Add(TEntity obj)
         {
-            _serviceBase.Add(obj);
+            ValidationResult.Add(_serviceBase.Add(obj));
+            return ValidationResult;
         }
 
         public void Dispose()
@@ -34,14 +38,16 @@ namespace DDDDemo.Aplicacao.Base
             return _serviceBase.GetById(id);
         }
 
-        public void Remove(TEntity obj)
+        public ValidationResult Remove(TEntity obj)
         {
-            _serviceBase.Remove(obj);
+            ValidationResult.Add(_serviceBase.Remove(obj));
+            return ValidationResult;
         }
 
-        public void Update(TEntity obj)
+        public ValidationResult Update(TEntity obj)
         {
-            _serviceBase.Update(obj);
+            ValidationResult.Add(_serviceBase.Update(obj));
+            return ValidationResult;
         }
     }
 }

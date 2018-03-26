@@ -1,5 +1,6 @@
 ﻿using DDDDemo.Aplicacao.Interfaces;
 using DDDDemo.Dominio.Entidades;
+using DDDDemo.MVC.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace DDDDemo.MVC.Controllers
         // GET: Categoria/Details/5
         public ActionResult Details(int id)
         {
-            var categoria = _categoriaAppService.GetById(id);            
+            var categoria = _categoriaAppService.GetById(id);
 
             return View(categoria);
         }
@@ -41,13 +42,19 @@ namespace DDDDemo.MVC.Controllers
         // POST: Categoria/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Categoria categoria)
+        public ActionResult Create(CategoriaViewModel categoria)
         {
             if (ModelState.IsValid)
-            {               
-                _categoriaAppService.Add(categoria);
+            {
+                Categoria categorias = null;
 
-                return RedirectToAction("Index");
+                var validationResult = _categoriaAppService.Add(categorias);
+
+                if (validationResult.IsValid)
+                    return RedirectToAction("Index");
+
+                foreach (var error in validationResult.Erros)
+                    ModelState.AddModelError("Nome", error.Message);
             }
 
             return View(categoria);
@@ -56,7 +63,7 @@ namespace DDDDemo.MVC.Controllers
         // GET: Categoria/Edit/5
         public ActionResult Edit(int id)
         {
-            var categoria = _categoriaAppService.GetById(id);            
+            var categoria = _categoriaAppService.GetById(id);
 
             return View(categoria);
         }
@@ -68,9 +75,13 @@ namespace DDDDemo.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                _categoriaAppService.Update(categoria);
+                var validationResult = _categoriaAppService.Update(categoria);
 
-                return RedirectToAction("Index");
+                if (validationResult.IsValid)
+                    return RedirectToAction("Index");
+
+                foreach (var error in validationResult.Erros)
+                    ModelState.AddModelError("", error.Message);
             }
 
             return View(categoria);
@@ -79,7 +90,7 @@ namespace DDDDemo.MVC.Controllers
         // GET: Clientes/Delete/5
         public ActionResult Delete(int id)
         {
-            var categoria = _categoriaAppService.GetById(id);            
+            var categoria = _categoriaAppService.GetById(id);
 
             return View(categoria);
         }

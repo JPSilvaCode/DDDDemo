@@ -15,7 +15,7 @@ namespace DDDDemo.Dominio.Tests.Entidades
                 Nome = "João Paulo", //informando Nome Válido               
             };
 
-            Assert.IsTrue(categoria.IsValid());
+            Assert.IsTrue(categoria.IsValid);
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace DDDDemo.Dominio.Tests.Entidades
                 Nome = "", //informando Nome Inválido               
             };
 
-            Assert.IsFalse(categoria.IsValid());
+            Assert.IsFalse(categoria.IsValid);
             Assert.IsTrue(categoria.ValidationResult.Erros.Any(e => e.Message == "O Nome é obrigatório"));
         }
     }

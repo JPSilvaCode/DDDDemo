@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using DomainValidation.Validation;
+using System.Collections.Generic;
 
 namespace DDDDemo.Dominio.Interfaces.Servico.Base
 {
     public interface IServiceBase<TEntity> where TEntity : class
     {
-        void Add(TEntity obj);
+        ValidationResult Add(TEntity obj);
         TEntity GetById(int id);
         IEnumerable<TEntity> GetAll();
-        void Update(TEntity obj);
-        void Remove(TEntity obj);
+        ValidationResult Update(TEntity obj);
+        ValidationResult Remove(TEntity obj);
     }
 }
