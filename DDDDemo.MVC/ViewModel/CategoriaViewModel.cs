@@ -11,7 +11,7 @@ namespace DDDDemo.MVC.ViewModel
         public int CategoriaId { get; set; }
 
         [Required(ErrorMessage = "Infome o campo Nome.")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "O campo observação deve ter entre 5 e 50 caracteres.")]
+        [StringLength(120, MinimumLength = 3, ErrorMessage = "O campo {0} deve possuir entre 3 e 120 caracteres.")]
         public string Nome { get; set; }
     }
 }
