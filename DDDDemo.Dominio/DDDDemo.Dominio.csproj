@@ -49,6 +49,8 @@
     <Compile Include="Servicos\Base\ServiceBase.cs" />
     <Compile Include="Servicos\CategoriaService.cs" />
     <Compile Include="Servicos\ProdutoService.cs" />
+    <Compile Include="Specifications\CategoriaSpec\CategoriaNomeMaximoSpec.cs" />
+    <Compile Include="Specifications\CategoriaSpec\CategoriaNomeMinimoSpec.cs" />
     <Compile Include="Specifications\CategoriaSpec\CategoriaNomeObrigatorioSpec.cs" />
     <Compile Include="Validations\CategoriaValid\CategoriaConsistenciaValid.cs" />
     <Compile Include="Validations\ValidationMessages.Designer.cs">

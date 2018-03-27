@@ -61,11 +61,29 @@ namespace DDDDemo.Dominio.Validations {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a O Nome é obrigatório.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nome|O Nome é muito grande.
         /// </summary>
-        internal static string NomeIsRequired {
+        internal static string nomeIsLong {
             get {
-                return ResourceManager.GetString("NomeIsRequired", resourceCulture);
+                return ResourceManager.GetString("nomeIsLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nome|O Nome é obrigatório.
+        /// </summary>
+        internal static string nomeIsRequired {
+            get {
+                return ResourceManager.GetString("nomeIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nome|O Nome é muito pequeno.
+        /// </summary>
+        internal static string nomeIsShort {
+            get {
+                return ResourceManager.GetString("nomeIsShort", resourceCulture);
             }
         }
     }

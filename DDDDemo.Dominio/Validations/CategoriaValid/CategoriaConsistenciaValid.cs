@@ -8,7 +8,9 @@ namespace DDDDemo.Dominio.Validations.CategoriaValid
     {
         public CategoriaConsistenciaValid()
         {           
-            base.Add("NomeCategoria", new Rule<Categoria>(new CategoriaNomeObrigatorioSpec(), ValidationMessages.NomeIsRequired));
+            base.Add("NomeObrigatorioCategoria", new Rule<Categoria>(new CategoriaNomeObrigatorioSpec(), ValidationMessages.nomeIsRequired));
+            base.Add("NomeMinimoCategoria", new Rule<Categoria>(new CategoriaNomeMinimoSpec(), ValidationMessages.nomeIsShort));
+            base.Add("NomeMaximoCategoria", new Rule<Categoria>(new CategoriaNomeMaximoSpec(), ValidationMessages.nomeIsLong));
         }
     }
 }

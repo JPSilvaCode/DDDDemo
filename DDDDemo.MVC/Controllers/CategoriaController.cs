@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DDDDemo.Aplicacao.Interfaces;
 using DDDDemo.Dominio.Entidades;
+using DDDDemo.Dominio.Tests.Utils;
 using DDDDemo.MVC.ViewModel;
 using PagedList;
 using System.Collections.Generic;
@@ -60,7 +61,10 @@ namespace DDDDemo.MVC.Controllers
                     return RedirectToAction("Index");
 
                 foreach (var error in validationResult.Erros)
-                    ModelState.AddModelError("Nome", error.Message);
+                {
+                    var extract = new ValidationMessageExtract(error.Message);
+                    ModelState.AddModelError(extract.SeparateField(), extract.SeparateMessage());
+                }                    
             }
 
             return View(categoriaViewModel);
@@ -89,7 +93,10 @@ namespace DDDDemo.MVC.Controllers
                     return RedirectToAction("Index");
 
                 foreach (var error in validationResult.Erros)
-                    ModelState.AddModelError("", error.Message);
+                {
+                    var extract = new ValidationMessageExtract(error.Message);
+                    ModelState.AddModelError(extract.SeparateField(), extract.SeparateMessage());
+                }
             }
 
             return View(categoriaViewModel);

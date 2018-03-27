@@ -1,4 +1,5 @@
 ﻿using DDDDemo.Dominio.Entidades;
+using DDDDemo.Dominio.Tests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
@@ -12,7 +13,7 @@ namespace DDDDemo.Dominio.Tests.Entidades
         {
             var categoria = new Categoria()
             {
-                Nome = "João Paulo", //informando Nome Válido               
+                Nome = "Pap", //informando Nome Válido               
             };
 
             Assert.IsTrue(categoria.IsValid);
@@ -27,7 +28,9 @@ namespace DDDDemo.Dominio.Tests.Entidades
             };
 
             Assert.IsFalse(categoria.IsValid);
-            Assert.IsTrue(categoria.ValidationResult.Erros.Any(e => e.Message == "O Nome é obrigatório"));
+            Assert.IsTrue(categoria.ValidationResult.Erros.Any(e => new ValidationMessageExtract(e.Message).SeparateMessage() == "O Nome é obrigatório"));
+            Assert.IsTrue(categoria.ValidationResult.Erros.Any(e => new ValidationMessageExtract(e.Message).SeparateMessage() == "O Nome é muito pequeno"));
+            Assert.IsTrue(categoria.ValidationResult.Erros.Any(e => new ValidationMessageExtract(e.Message).SeparateMessage() == "O Nome é muito grande"));
         }
     }
 }

@@ -10,7 +10,7 @@ namespace DDDDemo.MVC.ViewModel
     {
         public int CategoriaId { get; set; }
 
-        [Required(ErrorMessage = "Infome o campo Nome.")]
+        [Required(ErrorMessage = "Infome o campo {0}.")]
         [StringLength(120, MinimumLength = 3, ErrorMessage = "O campo {0} deve possuir entre 3 e 120 caracteres.")]
         public string Nome { get; set; }
     }
