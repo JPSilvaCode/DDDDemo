@@ -1,8 +1,11 @@
-﻿@model IEnumerable<DDDDemo.MVC.ViewModel.CategoriaViewModel>
+﻿@using PagedList.Mvc
+@model  PagedList.IPagedList<DDDDemo.MVC.ViewModel.CategoriaViewModel>
 
 @{
     ViewBag.Title = "Categoria";
 }
+
+@*<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />*@
 
 <h2>Cadastro de Categorias</h2>
 
@@ -17,7 +20,7 @@
                 @Html.DisplayName("ID")
             </th>
             <th scope="col">
-                @Html.DisplayNameFor(model => model.Nome)
+                @Html.DisplayNameFor(model => model[0].Nome)
             </th>
             <th scope="col"></th>
         </tr>
@@ -26,20 +29,29 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <th scope="row">
-                @Html.DisplayFor(modelItem => item.CategoriaId)
-            </th>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.CategoriaId }, new { @class = "btn btn-outline-warning btn-sm" }) |
-                @Html.ActionLink("Detalhes", "Details", new { id = item.CategoriaId }, new { @class = "btn btn-outline-info btn-sm" }) |
-                @Html.ActionLink("Excluir", "Delete", new { id = item.CategoriaId }, new { @class = "btn btn-outline-danger btn-sm" })
-            </td>
-        </tr>
+            <tr>
+                <th scope="row">
+                    @Html.DisplayFor(modelItem => item.CategoriaId)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.CategoriaId }, new { @class = "btn btn-outline-warning btn-sm" }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.CategoriaId }, new { @class = "btn btn-outline-info btn-sm" }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.CategoriaId }, new { @class = "btn btn-outline-danger btn-sm" })
+                </td>
+            </tr>
         }
     </tbody>
 
 </table>
+
+<div id="container" style="margin-left: 20px">
+    <p></p>
+    <p></p>
+    <div class="pagination" style="margin-left: 400px">
+        Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+        @Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina }))
+    </div>
+</div>

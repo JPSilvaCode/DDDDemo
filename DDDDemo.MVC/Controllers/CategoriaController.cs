@@ -2,7 +2,9 @@
 using DDDDemo.Aplicacao.Interfaces;
 using DDDDemo.Dominio.Entidades;
 using DDDDemo.MVC.ViewModel;
+using PagedList;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace DDDDemo.MVC.Controllers
@@ -17,9 +19,14 @@ namespace DDDDemo.MVC.Controllers
         }
 
         // GET: Categoria
-        public ActionResult Index()
-        {
+        public ActionResult Index(int? pagina)
+        {           
             var categoriaViewModel = Mapper.Map<IEnumerable<Categoria>, IEnumerable<CategoriaViewModel>>(_categoriaAppService.GetAll());
+
+            //PagedList
+            int paginaTamanho = 10;
+            int paginaNumero = (pagina ?? 1);            
+            categoriaViewModel = categoriaViewModel.OrderBy(c => c.CategoriaId).ToPagedList(paginaNumero, paginaTamanho);
 
             return View(categoriaViewModel);
         }
