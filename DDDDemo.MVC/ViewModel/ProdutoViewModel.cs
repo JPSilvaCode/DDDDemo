@@ -12,9 +12,13 @@ namespace DDDDemo.MVC.ViewModel
         [DisplayName("ID")]
         public int ProdutoId { get; set; }
 
+        [Required(ErrorMessage = "Infome o campo {0}.")]
+        [StringLength(120, MinimumLength = 3, ErrorMessage = "O campo {0} deve possuir entre 3 e 120 caracteres.")]
         public string Nome { get; set; }
 
-        //[DataType(DataType.Currency)]
+        [DataType(DataType.Currency)]
+        //[Range(0,(double) decimal.MaxValue)]
+        [Required(ErrorMessage = "Infome o campo {0}.")]
         public decimal Valor { get; set; }
 
         [DisplayName("Disponivel?")]
