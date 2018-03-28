@@ -16,7 +16,7 @@ namespace DDDDemo.Dominio.Tests.Entidades
                 Nome = "Paple Higienico", //informando Nome Válido 
                 Valor = 10, //informando Valor Válido 
                 Situacao = true,
-                CategoriaId = 1,
+                CategoriaId = 1, //informando CategoriaId Válida
             };
 
             Assert.IsTrue(produto.IsValid);
@@ -30,7 +30,7 @@ namespace DDDDemo.Dominio.Tests.Entidades
                 Nome = "", //informando Nome Inválido 
                 Valor = 0, //informando Valor Inválido 
                 Situacao = true,
-                CategoriaId = 1,
+                CategoriaId = 0, //informando CategoriaId Inválida
             };
 
             Assert.IsFalse(produto.IsValid);
@@ -38,6 +38,7 @@ namespace DDDDemo.Dominio.Tests.Entidades
             Assert.IsTrue(produto.ValidationResult.Erros.Any(e => new ValidationMessageExtract(e.Message).SeparateMessage() == "O Nome é muito pequeno"));
             Assert.IsTrue(produto.ValidationResult.Erros.Any(e => new ValidationMessageExtract(e.Message).SeparateMessage() == "O Nome é muito grande"));
             Assert.IsTrue(produto.ValidationResult.Erros.Any(e => new ValidationMessageExtract(e.Message).SeparateMessage() == "O Valor deve ser maior que zero"));
+            Assert.IsTrue(produto.ValidationResult.Erros.Any(e => new ValidationMessageExtract(e.Message).SeparateMessage() == "A categoria é obrigatória"));
         }
     }
 }

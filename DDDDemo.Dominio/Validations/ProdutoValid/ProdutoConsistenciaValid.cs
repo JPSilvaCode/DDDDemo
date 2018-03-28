@@ -12,6 +12,7 @@ namespace DDDDemo.Dominio.Validations.ProdutoValid
             base.Add("NomeMinimoProduto", new Rule<Produto>(new ProdutoNomeMinimoSpec(), ValidationMessages.nomeIsShort));
             base.Add("NomeMaximoProduto", new Rule<Produto>(new ProdutoNomeMaximoSpec(), ValidationMessages.nomeIsLong));
             base.Add("ValorMaior0Produto", new Rule<Produto>(new ProdutoValorMaiorZeroSpec(), ValidationMessages.ValorIsLowerZero));
+            base.Add("CategoriaObrigatorioProduto", new Rule<Produto>(new ProdutoCategoriaObrigatorioSpec(), "CategoriaId|A categoria é obrigatória"));
         }
     }
 }

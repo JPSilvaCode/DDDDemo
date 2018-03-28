@@ -53,6 +53,7 @@
     <Compile Include="Specifications\CategoriaSpec\CategoriaNomeMinimoSpec.cs" />
     <Compile Include="Specifications\CategoriaSpec\CategoriaNomeObrigatorioSpec.cs" />
     <Compile Include="Specifications\CategoriaSpec\CategoriaNomeUnicoSpec.cs" />
+    <Compile Include="Specifications\ProdutoSpec\ProdutoCategoriaObrigatorioSpec.cs" />
     <Compile Include="Specifications\ProdutoSpec\ProdutoNomeMaximoSpec.cs" />
     <Compile Include="Specifications\ProdutoSpec\ProdutoNomeMinimoSpec.cs" />
     <Compile Include="Specifications\ProdutoSpec\ProdutoNomeObrigatorioSpec.cs" />
