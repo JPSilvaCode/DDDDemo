@@ -1,0 +1,73 @@
+﻿@using PagedList.Mvc
+@model  PagedList.IPagedList<DDDDemo.MVC.ViewModel.ProdutoViewModel>
+
+@{
+    ViewBag.Title = "Produto";
+}
+
+<h2>Cadastro de Produtos</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-outline-primary btn-lg" })
+</p>
+<table class="table table-sm table-hover">
+
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model[0].ProdutoId)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model[0].Nome)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model[0].Valor)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model[0].Situacao)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model[0].CategoriaId)
+            </th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">
+                    @Html.DisplayFor(modelItem => item.ProdutoId)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SituacaoTexto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ProdutoId }, new { @class = "btn btn-outline-warning btn-sm" }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.ProdutoId }, new { @class = "btn btn-outline-info btn-sm" }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.ProdutoId }, new { @class = "btn btn-outline-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div id="container" style="margin-left: 20px">
+    <p></p>
+    <p></p>
+    <div class="pagination" style="margin-left: 400px">
+        Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+        @Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina }))
+    </div>
+</div>

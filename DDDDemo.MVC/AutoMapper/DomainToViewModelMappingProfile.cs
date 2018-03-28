@@ -13,6 +13,7 @@ namespace DDDDemo.MVC.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<Categoria, CategoriaViewModel>();
+            CreateMap<Produto, ProdutoViewModel>();
         }
     }
 }

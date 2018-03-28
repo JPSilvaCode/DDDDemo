@@ -1,0 +1,53 @@
+﻿@model DDDDemo.MVC.ViewModel.ProdutoViewModel
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<div>
+    <h4>Detalhes do Produto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Situacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SituacaoTexto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.Nome)
+        </dd>       
+
+    </dl>
+</div>
+
+<div class="row">
+    <div class="col col-md-1">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.ProdutoId }, new { @class = "btn btn-outline-warning" })
+    </div>
+    <div class="col col-md-1">
+        @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-outline-secondary" })
+    </div>
+</div>
