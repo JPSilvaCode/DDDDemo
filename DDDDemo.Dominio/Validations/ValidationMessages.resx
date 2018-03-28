@@ -130,6 +130,6 @@
     <value>Nome|O Nome é muito pequeno</value>
   </data>
   <data name="ValorIsLowerZero" xml:space="preserve">
-    <value>Valor|O valor deve ser maior que zero</value>
+    <value>Valor|O Valor deve ser maior que zero</value>
   </data>
 </root>

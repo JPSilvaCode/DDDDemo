@@ -97,7 +97,7 @@ namespace DDDDemo.Dominio.Validations {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Valor|O valor deve ser maior que zero.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Valor|O Valor deve ser maior que zero.
         /// </summary>
         internal static string ValorIsLowerZero {
             get {

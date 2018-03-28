@@ -26,6 +26,8 @@ namespace DDDDemo.Infraestrutura.Dados.Contexto.Mapping
             HasRequired(p => p.Categoria)
                .WithMany()
                .HasForeignKey(p => p.CategoriaId);
+
+            Ignore(t => t.ValidationResult);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace DDDDemo.Dominio.Tests.Entidades
         }
 
         [TestMethod]
-        public void Aluno_Consistente_False()
+        public void Categoria_Consistente_False()
         {
             var categoria = new Categoria()
             {

@@ -31,7 +31,7 @@ namespace DDDDemo.Dominio.Tests.Entidades
         }
 
         [TestMethod]
-        public void Aluno_Validation_False()
+        public void Categoria_Validation_False()
         {
             var categoria = new Categoria()
             {
