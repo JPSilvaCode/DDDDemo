@@ -15,7 +15,7 @@ namespace DDDDemo.Dominio.Entidades
         public ValidationResult ValidationResult { get; private set; }
 
         //public bool IsValid()
-        //{           
+        //{
         //    ValidationResult = new CategoriaConsistenciaValid().Validate(this);
         //    return ValidationResult.IsValid;
         //}
@@ -27,6 +27,6 @@ namespace DDDDemo.Dominio.Entidades
                 ValidationResult = new CategoriaConsistenciaValid().Validate(this);
                 return ValidationResult.IsValid;
             }
-        }
+        }       
     }
 }

@@ -1,6 +1,8 @@
-﻿using DDDDemo.Dominio.Interfaces.Repositorio.Base;
+﻿using DDDDemo.Dominio.Entidades;
+using DDDDemo.Dominio.Interfaces.Repositorio.Base;
 using DDDDemo.Dominio.Interfaces.Servico.Base;
 using DDDDemo.Dominio.Interfaces.Validation;
+using DDDDemo.Dominio.Validations.CategoriaValid;
 using DomainValidation.Validation;
 using System;
 using System.Collections.Generic;
@@ -29,7 +31,7 @@ namespace DDDDemo.Dominio.Servicos.Base
                 return ValidationResult;
 
             if (obj is ISelfValidation selfValidationEntity && !selfValidationEntity.IsValid)
-                return selfValidationEntity.ValidationResult;
+                return selfValidationEntity.ValidationResult;            
 
             _repository.Add(obj);
             return _validationResult;

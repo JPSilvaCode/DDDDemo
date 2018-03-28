@@ -1,6 +1,5 @@
 ﻿using DDDDemo.Dominio.Entidades;
 using DomainValidation.Interfaces.Specification;
-using System;
 
 namespace DDDDemo.Dominio.Specifications.CategoriaSpec
 {

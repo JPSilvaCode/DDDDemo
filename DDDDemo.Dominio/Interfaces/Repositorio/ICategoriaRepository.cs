@@ -5,5 +5,6 @@ namespace DDDDemo.Dominio.Interfaces.Repositorio
 {
     public interface ICategoriaRepository : IRepositoryBase<Categoria>
     {
+        Categoria BuscarPorNome(string nome);
     }
 }

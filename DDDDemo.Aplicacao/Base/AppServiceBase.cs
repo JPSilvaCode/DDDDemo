@@ -9,6 +9,7 @@ namespace DDDDemo.Aplicacao.Base
     public class AppServiceBase<TEntity> : IDisposable, IAppServiceBase<TEntity> where TEntity : class
     {
         private readonly IServiceBase<TEntity> _serviceBase;
+
         protected ValidationResult ValidationResult { get; private set; }
 
         public AppServiceBase(IServiceBase<TEntity> serviceBase)

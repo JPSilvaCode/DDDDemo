@@ -10,6 +10,6 @@ namespace DDDDemo.Dominio.Interfaces.Validation
     public interface ISelfValidation
     {
         ValidationResult ValidationResult { get; }
-        bool IsValid { get; }
+        bool IsValid { get; }        
     }
 }

@@ -61,6 +61,15 @@ namespace DDDDemo.Dominio.Validations {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Cadastro já existe.
+        /// </summary>
+        internal static string cadastroAlready {
+            get {
+                return ResourceManager.GetString("cadastroAlready", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Nome|O Nome é muito grande.
         /// </summary>
         internal static string nomeIsLong {
