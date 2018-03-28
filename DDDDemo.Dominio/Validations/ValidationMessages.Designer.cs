@@ -95,5 +95,14 @@ namespace DDDDemo.Dominio.Validations {
                 return ResourceManager.GetString("nomeIsShort", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Valor|O valor deve ser maior que zero.
+        /// </summary>
+        internal static string ValorIsLowerZero {
+            get {
+                return ResourceManager.GetString("ValorIsLowerZero", resourceCulture);
+            }
+        }
     }
 }
