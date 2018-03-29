@@ -30,6 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.3\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator.NinjectAdapter.Unofficial, Version=3.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.NinjectAdapter.Unofficial.3.2.2.0\lib\Net40\CommonServiceLocator.NinjectAdapter.Unofficial.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\MvcMusicStoreDDD\MvcMusicStore.CrossCutting.InversionOfControl\bin\Debug\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
@@ -43,10 +52,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IoC.cs" />
+    <Compile Include="Modulos\AplicacaoNinjectModule.cs" />
+    <Compile Include="Modulos\DominioNinjectModule.cs" />
+    <Compile Include="Modulos\RepositoryNinjectModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDDDemo.Aplicacao\DDDDemo.Aplicacao.csproj">
+      <Project>{D2701BB7-ECEF-43DF-8317-5D2563BD19BE}</Project>
+      <Name>DDDDemo.Aplicacao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.Dominio\DDDDemo.Dominio.csproj">
+      <Project>{E675B0D0-9862-40CA-9122-44BED7A2B7D1}</Project>
+      <Name>DDDDemo.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.Infraestrutura.Dados.Repository\DDDDemo.Infraestrutura.Dados.Repository.csproj">
+      <Project>{03291133-B09A-4E38-8E19-4B41760AC92A}</Project>
+      <Name>DDDDemo.Infraestrutura.Dados.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
