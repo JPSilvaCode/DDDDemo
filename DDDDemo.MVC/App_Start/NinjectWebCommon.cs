@@ -45,7 +45,6 @@ namespace DDDDemo.MVC.App_Start
                 kernel.Dispose();
                 throw;
             }
-
         }
         private static void RegisterServices(IKernel kernel)
         {
