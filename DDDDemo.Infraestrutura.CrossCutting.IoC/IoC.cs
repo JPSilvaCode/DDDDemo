@@ -21,7 +21,8 @@ namespace DDDDemo.Infraestrutura.CrossCutting.IoC
             return new StandardKernel(
                 new DominioNinjectModule(),
                 new RepositoryNinjectModule(),
-                new AplicacaoNinjectModule());
+                new AplicacaoNinjectModule(),
+                new ContextoNinjectModule());
         }
     }
 }

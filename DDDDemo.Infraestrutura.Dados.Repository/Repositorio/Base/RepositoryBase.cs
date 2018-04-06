@@ -8,13 +8,19 @@ using System.Linq;
 namespace DDDDemo.Infraestrutura.Dados.Repository.Repositorio.Base
 {
     public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
-    {
-        protected DDDDemoContext Db = new DDDDemoContext();
+    {        
+        protected DDDDemoContext _context;
+        protected readonly IDbSet<TEntity> _dbset;
+
+        public RepositoryBase(DDDDemoContext context)
+        {
+            _context = context;
+            _dbset = context.Set<TEntity>();
+        }
 
         public void Add(TEntity obj)
         {
-            Db.Set<TEntity>().Add(obj);
-            Db.SaveChanges();
+            _context.Set<TEntity>().Add(obj);            
         }
 
         public void Dispose()
@@ -24,24 +30,22 @@ namespace DDDDemo.Infraestrutura.Dados.Repository.Repositorio.Base
 
         public IEnumerable<TEntity> GetAll()
         {
-            return Db.Set<TEntity>().ToList();
+            return _context.Set<TEntity>().ToList();
         }
 
         public TEntity GetById(int id)
         {
-            return Db.Set<TEntity>().Find(id);
+            return _context.Set<TEntity>().Find(id);
         }
 
         public void Remove(TEntity obj)
         {
-            Db.Set<TEntity>().Remove(obj);
-            Db.SaveChanges();
+            _context.Set<TEntity>().Remove(obj);            
         }
 
         public void Update(TEntity obj)
         {
-            Db.Entry(obj).State = EntityState.Modified;
-            Db.SaveChanges();
+            _context.Entry(obj).State = EntityState.Modified;            
         }
     }
 }

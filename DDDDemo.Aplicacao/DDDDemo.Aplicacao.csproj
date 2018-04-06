@@ -56,6 +56,10 @@
       <Project>{E675B0D0-9862-40CA-9122-44BED7A2B7D1}</Project>
       <Name>DDDDemo.Dominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DDDDemo.Infraestrutura.Dados.Contexto\DDDDemo.Infraestrutura.Dados.Contexto.csproj">
+      <Project>{90741185-B36F-4462-A828-3ED513D9F98E}</Project>
+      <Name>DDDDemo.Infraestrutura.Dados.Contexto</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

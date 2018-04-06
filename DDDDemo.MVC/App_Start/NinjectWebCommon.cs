@@ -48,6 +48,7 @@ namespace DDDDemo.MVC.App_Start
         }
         private static void RegisterServices(IKernel kernel)
         {
+            //kernel.Bind<DDDDemoContext>().ToSelf().InRequestScope();
             //kernel.Bind(typeof(IAppServiceBase<>)).To(typeof(AppServiceBase<>));
             //kernel.Bind<ICategoriaAppService>().To<CategoriaAppService>();
             //kernel.Bind<IProdutoAppService>().To<ProdutoAppService>();
