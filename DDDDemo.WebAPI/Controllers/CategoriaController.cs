@@ -1,4 +1,5 @@
 ﻿using DDDDemo.Aplicacao.Interfaces;
+using DDDDemo.Dominio.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,12 @@ namespace DDDDemo.WebAPI.Controllers
         public CategoriaController(ICategoriaAppService categoriaAppService)
         {
             _categoriaAppService = categoriaAppService;
+        }
+
+        // GET api/Categoria
+        public IEnumerable<Categoria> GetCategorias()
+        {
+            return _categoriaAppService.GetAll().AsEnumerable();
         }
     }
 }
