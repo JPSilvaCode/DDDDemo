@@ -7,6 +7,9 @@ namespace DDDDemo.Dominio.Specifications.CategoriaSpec
     {
         public bool IsSatisfiedBy(Categoria categoria)
         {
+            if (string.IsNullOrEmpty(categoria.Nome))            
+                return true;            
+
             return !string.IsNullOrEmpty(categoria.Nome) && !string.IsNullOrWhiteSpace(categoria.Nome) && categoria.Nome.ToString().Trim().Length < 121;
         }
     }
