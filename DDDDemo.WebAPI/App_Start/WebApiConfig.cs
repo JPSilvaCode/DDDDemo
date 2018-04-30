@@ -19,6 +19,11 @@ namespace DDDDemo.WebAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Formatters.Remove(
+                config.Formatters.XmlFormatter);
+
+            config.Formatters.JsonFormatter.Indent = true;
         }
     }
 }

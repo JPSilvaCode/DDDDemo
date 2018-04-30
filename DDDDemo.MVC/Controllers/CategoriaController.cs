@@ -21,9 +21,7 @@ namespace DDDDemo.MVC.Controllers
 
         // GET: Categoria
         public ActionResult Index(int? pagina)
-        {
-            Teste Jenkins
-            
+        {       
             var categoriaViewModel = Mapper.Map<IEnumerable<Categoria>, IEnumerable<CategoriaViewModel>>(_categoriaAppService.GetAll());
 
             //PagedList
