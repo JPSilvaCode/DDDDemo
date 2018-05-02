@@ -10,7 +10,6 @@ namespace DDDDemo.MVC.Controllers
     {
         public ActionResult Index()
         {
-            teste;
             return View();
         }
 
